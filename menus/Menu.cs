@@ -23,4 +23,10 @@ internal abstract class Menu
 
     }
 
+    public virtual void SairDoMenu()
+    {
+         Console.Write("\nDigite qualquer tecla para sair: ");
+        Console.ReadKey();
+    }
+
 }

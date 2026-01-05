@@ -18,6 +18,7 @@ internal class MenuCadstrarUsuario : Menu
 
         Usuario.AdicionarUsuario(usu);
 
-        Console.WriteLine("Usuário cadastrado");
+        Console.WriteLine($"Usuário cadastrado. ID : {usu.Id}");
+        SairDoMenu();
     }
 }

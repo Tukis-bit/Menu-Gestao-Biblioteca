@@ -1,11 +1,16 @@
 namespace Biblioteca.Modelos;
 
-internal class Usuario
+internal class Usuario : IEntidadeComId
 {
+    private static int  proximoId = 1;
+    public int Id {get; internal set;}
     public string? Nome { get; set; }
 
     public Usuario(string? nome)
     {
+        Id = proximoId;
+        proximoId++;
+
         Nome = nome;
     }
 

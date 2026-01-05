@@ -4,6 +4,7 @@
 Dictionary<int, Menu> opcoes = new();
 opcoes.Add(1,new MenuCadstrarUsuario());
 opcoes.Add(2, new MenuListarUsuarios());
+opcoes.Add(3, new MenuBuscarUsuarioId());
 Console.Clear();
 
  void ExibirMenu()
@@ -13,7 +14,8 @@ Console.Clear();
 Console.WriteLine(@"
 1 - Cadastrar um novo usuario
 2 - Listar Usuarios
-0 - Salvar e Sair");
+3 - Buscar um usuario por ID
+0 - Sair");
 
 Console.Write("\nEscreva a opção que você deseja: ");
 int escolha = int.Parse(Console.ReadLine()!);
