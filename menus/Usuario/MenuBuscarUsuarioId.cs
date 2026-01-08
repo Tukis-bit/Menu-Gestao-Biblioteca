@@ -4,7 +4,7 @@ namespace Biblioteca.Menus;
 
 internal class MenuBuscarUsuarioId : Menu
 {
-    public override void Executar()
+    public override void Executar(Database db)
     {
         ExibirNomeOpcao("Busca de usuario por id");
 
@@ -13,7 +13,7 @@ internal class MenuBuscarUsuarioId : Menu
         Console.WriteLine("\nBuscando....\n");
         Thread.Sleep(1500);
 
-        var ListaDeUsuarios = Usuario.usuarios;
+        var ListaDeUsuarios = db.Usuarios;
 
         var usuario =  Filter.BuscarUsuarioPId(id,ListaDeUsuarios);
 

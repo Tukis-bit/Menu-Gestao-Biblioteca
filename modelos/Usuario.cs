@@ -1,20 +1,34 @@
+using System.Data.Common;
+
+using System.Text.Json.Serialization;
+
 namespace Biblioteca.Modelos;
 
 internal class Usuario : IEntidadeComId
 {
-    private static int  proximoId = 1;
-    public int Id {get; internal set;}
+    public static int  proximoId = 0;
+    public int Id {get; set;}
     public string? Nome { get; set; }
 
     public Usuario(string? nome)
     {
-        Id = proximoId;
         proximoId++;
+        Id = proximoId;
 
         Nome = nome;
+        Idade = 0;
     }
 
-    public int Idade {get; internal set;}
+    [JsonConstructor]
+    public Usuario(int id, string? nome, int idade)
+    {
+        Id = id;
+        Nome = nome;
+        Idade = idade;
+    }
+
+
+    public int Idade {get;set;}
     public void AtribuirIdade(int idade)
     {
         for(int i = 1; i > 0; i++ )
@@ -28,15 +42,10 @@ internal class Usuario : IEntidadeComId
         }
         else
         {
-            Idade = idade;
+            this.Idade = idade;
             break;
           
         }}
-    } 
-
-    public static List<Usuario> usuarios { get; } = new();
-    public static void AdicionarUsuario(Usuario usu)
-    {
-        usuarios.Add(usu);
     }
+
 }

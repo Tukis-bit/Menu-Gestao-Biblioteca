@@ -4,7 +4,7 @@ namespace Biblioteca.Menus;
 
 internal class MenuCadstrarUsuario : Menu
 {
-    public override void Executar()
+    public override void Executar(Database db)
     {
         ExibirNomeOpcao("Cadastrar Usuario");
 
@@ -16,7 +16,8 @@ internal class MenuCadstrarUsuario : Menu
         int idade = int.Parse(Console.ReadLine()!);
         usu.AtribuirIdade(idade); 
 
-        Usuario.AdicionarUsuario(usu);
+        db.Usuarios.Add(usu);
+        
 
         Console.WriteLine($"Usuário cadastrado. ID : {usu.Id}");
         SairDoMenu();

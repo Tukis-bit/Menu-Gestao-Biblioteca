@@ -1,21 +1,25 @@
 ﻿using Biblioteca.Menus;
 
+var db = JsonStorage.Carregar();
+Database.DefinirIds(db);
 
 Dictionary<int, Menu> opcoes = new();
-opcoes.Add(1,new MenuCadstrarUsuario());
-opcoes.Add(2, new MenuListarUsuarios());
-opcoes.Add(3, new MenuBuscarUsuarioId());
+opcoes.Add(1,new MenuUsuario());
+opcoes.Add(2, new MenuLivro());
+
 Console.Clear();
+ExibirMenu();
+
 
  void ExibirMenu()
 {
     Console.Clear();
     
 Console.WriteLine(@"
-1 - Cadastrar um novo usuario
-2 - Listar Usuarios
-3 - Buscar um usuario por ID
-0 - Sair");
+1 - Usuarios
+2 - Livros
+3 - Emprestimos
+0 - Salvar e Sair");
 
 Console.Write("\nEscreva a opção que você deseja: ");
 int escolha = int.Parse(Console.ReadLine()!);
@@ -25,10 +29,12 @@ Thread.Sleep(1500);
 if(opcoes.ContainsKey(escolha))
 {
     Menu menuEscolhido = opcoes[escolha];
-    menuEscolhido.Executar();
+    menuEscolhido.Executar(db);
 }
 else if( escolha == 0)
 {
+        JsonStorage.Salvar(db);
+    Console.WriteLine("Dados salvos com sucesso.");
     Console.WriteLine("Saindo......");
     return;
 }
@@ -40,4 +46,3 @@ else
 ExibirMenu();
 }
 
-ExibirMenu();

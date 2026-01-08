@@ -6,7 +6,7 @@ namespace Biblioteca.Menus;
 internal abstract class Menu
 {
     
-    public abstract void Executar();
+    public abstract void Executar(Database db);
 
     public virtual void ExibirNomeOpcao(string nome)
     {
