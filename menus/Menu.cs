@@ -30,3 +30,4 @@ internal abstract class Menu
     }
 
 }
+

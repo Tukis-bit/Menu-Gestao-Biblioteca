@@ -21,6 +21,7 @@ internal class MenuDeletarUsuario : Menu
              return;
         }
 
+        db.Emprestimos.RemoveAll(e => e.Id_Usuario == usuario.Id);
         db.Usuarios.Remove(usuario);
         Console.WriteLine("Usuário removido com sucesso!");
 

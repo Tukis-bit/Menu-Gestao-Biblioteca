@@ -24,3 +24,4 @@ internal class MenuCadastrarLivro : Menu
         SairDoMenu();
     }
 }
+

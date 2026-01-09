@@ -6,6 +6,7 @@ namespace Biblioteca.Modelos;
 
 internal class Usuario : IEntidadeComId
 {
+    
     public static int  proximoId = 0;
     public int Id {get; set;}
     public string? Nome { get; set; }
@@ -48,4 +49,58 @@ internal class Usuario : IEntidadeComId
         }}
     }
 
+    public void AdicionarEmprestimo(int id_livro,Database db)
+    {
+        var livro = db.Livros.FirstOrDefault(l => l.Id == id_livro);
+
+        if (livro is not null && !livro.Emprestado)
+        {
+            Emprestimo novoEmprestimo = new(id_livro,this.Id);
+            db.Emprestimos.Add(novoEmprestimo);
+            livro.Emprestado = true;
+
+            Console.WriteLine($"\nEmprestimo do livro {livro.Titulo} Para usuario {this.Nome} realizado com sucesso");
+        }
+        else
+        {
+            Console.WriteLine("\nLivro não pode ser emprestado");
+            Console.WriteLine();
+        }
+
+    }
+
+    public void DevolverLivro(int id_livro,Database db)
+    {
+        var livro = db.Livros.FirstOrDefault(l => l.Id == id_livro);
+
+        if (livro is null)
+        {
+            Console.WriteLine("\nLivro não existe");
+            Console.WriteLine();
+            return;
+        }
+
+        if (!livro.Emprestado)
+        {
+            Console.WriteLine("\nLivro não está emprestado");
+            Console.WriteLine();
+            return;
+        }
+
+        var emprestimo = Filter.BuscarEmprestimoLivroUsuario(id_livro, this.Id, db);
+
+        if (emprestimo is null)
+        {
+            Console.WriteLine("\nLivro não foi emprestado para este usuário");
+            Console.WriteLine();
+            return;
+        }
+
+        livro.Emprestado = false;
+        db.Emprestimos.Remove(emprestimo);
+
+        Console.WriteLine($"\nLivro {livro.Titulo} devolvido com sucesso");    
+    }
+
 }
+

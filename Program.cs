@@ -18,7 +18,6 @@ ExibirMenu();
 Console.WriteLine(@"
 1 - Usuarios
 2 - Livros
-3 - Emprestimos
 0 - Salvar e Sair");
 
 Console.Write("\nEscreva a opção que você deseja: ");

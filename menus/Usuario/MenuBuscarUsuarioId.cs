@@ -13,9 +13,8 @@ internal class MenuBuscarUsuarioId : Menu
         Console.WriteLine("\nBuscando....\n");
         Thread.Sleep(1500);
 
-        var ListaDeUsuarios = db.Usuarios;
 
-        var usuario =  Filter.BuscarUsuarioPId(id,ListaDeUsuarios);
+        var usuario =  Filter.BuscarUsuarioPId(id,db);
 
         if(usuario == null)
         {

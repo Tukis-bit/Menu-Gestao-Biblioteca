@@ -11,6 +11,7 @@ internal class MenuUsuario : Menu
         opcoes.Add(2, new MenuListarUsuarios());
         opcoes.Add(3, new MenuBuscarUsuarioId());
         opcoes.Add(4, new MenuDeletarUsuario());
+        opcoes.Add(5, new MenuListarEmprestimosUsuario());
 
         void ExibirMenu()
         {
@@ -23,6 +24,7 @@ internal class MenuUsuario : Menu
 2 - Listar Usuarios
 3 - Buscar um usuario por ID
 4 - Apagar um usuario
+5 - Listar empréstimos de um usuario
 0 - Sair
 ");
 
