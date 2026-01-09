@@ -3,19 +3,19 @@ using Biblioteca.Modelos;
 
 namespace Biblioteca.Menus;
 
-internal class MenuDevolverlivro : Menu
+internal class MenuDevolverLivro : Menu
 {
     public override void Executar(Database db)
     {
-        ExibirNomeOpcao("Devolvolução de Livro");
-        Console.Write("Informe o seu id de usuario: ");
+        ExibirNomeOpcao("Devolução de Livro");
+        Console.Write("Informe o seu id de usuário: ");
         int id = int.Parse(Console.ReadLine()!);
 
-        var usu = Filter.BuscarUsuarioPId(id,db);
+        var usu = Filter.BuscarUsuarioPorId(id, db);
 
         if(usu == null)
         {
-            Console.WriteLine("\n Usuario não identificado. Voltando ao menu");
+            Console.WriteLine("\nUsuário não identificado. Voltando ao menu");
             Thread.Sleep(1500);
             return;
         }
@@ -27,3 +27,4 @@ internal class MenuDevolverlivro : Menu
         SairDoMenu();
     }
 }
+

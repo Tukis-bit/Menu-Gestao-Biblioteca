@@ -4,7 +4,7 @@ namespace Biblioteca.Modelos;
 
 internal class Filter
 {
-    public static Usuario? BuscarUsuarioPId (int id, Database db)
+    public static Usuario? BuscarUsuarioPorId(int id, Database db)
     {
         foreach(Usuario usu in db.Usuarios)
         {

@@ -6,14 +6,14 @@ internal class MenuPegarLivroEmprestado : Menu
 {
     public override void Executar(Database db)
     {
-        ExibirNomeOpcao("Emprestimo de Livros");
+        ExibirNomeOpcao("Empréstimo de Livros");
         Console.Write("Digite o seu ID de usuário: ");
         int id = int.Parse(Console.ReadLine()!);
-        var usu = Filter.BuscarUsuarioPId(id,db);
+        var usu = Filter.BuscarUsuarioPorId(id, db);
 
         if(usu == null)
         { 
-            Console.WriteLine("\nUsuario não encontrado. Voltando ao menu");
+            Console.WriteLine("\nUsuário não encontrado. Voltando ao menu");
               Thread.Sleep(1000);
             return;
         }
@@ -27,3 +27,4 @@ internal class MenuPegarLivroEmprestado : Menu
         SairDoMenu();
     }
 }
+

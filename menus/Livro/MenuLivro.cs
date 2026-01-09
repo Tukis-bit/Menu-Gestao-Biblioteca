@@ -11,7 +11,7 @@ internal class MenuLivro : Menu
         opcoes.Add(3, new MenuBuscarLivroId());
         opcoes.Add(4, new MenuBuscarLivroNome());
         opcoes.Add(5, new MenuPegarLivroEmprestado());
-        opcoes.Add(6, new MenuDevolverlivro());
+        opcoes.Add(6, new MenuDevolverLivro());
         opcoes.Add(7, new MenuApagarLivro());
 
         void ExibirMenu()

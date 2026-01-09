@@ -8,7 +8,7 @@ internal class MenuApagarLivro : Menu
     {
         ExibirNomeOpcao("Excluir um livro");
 
-        Console.Write("Informe o ID do livro que será deletado: ");
+        Console.Write("Informe o ID do livro que será excluído: ");
         int id = int.Parse(Console.ReadLine()!);
 
         var livro = db.Livros.FirstOrDefault(l => l.Id == id);

@@ -6,7 +6,7 @@ internal class MenuListarUsuarios : Menu
 {
     public override void Executar(Database db)
     {
-        ExibirNomeOpcao("Lista de usuarios");
+        ExibirNomeOpcao("Lista de usuários");
 
         if (db.Usuarios.Count == 0)
         {

@@ -59,7 +59,7 @@ internal class Usuario : IEntidadeComId
             db.Emprestimos.Add(novoEmprestimo);
             livro.Emprestado = true;
 
-            Console.WriteLine($"\nEmprestimo do livro {livro.Titulo} Para usuario {this.Nome} realizado com sucesso");
+            Console.WriteLine($"\nEmpréstimo do livro {livro.Titulo} Para usuário {this.Nome} realizado com sucesso");
         }
         else
         {

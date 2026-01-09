@@ -2,13 +2,13 @@ using Biblioteca.Modelos;
 
 namespace Biblioteca.Menus;
 
-internal class MenuDeletarUsuario : Menu
+internal class MenuApagarUsuario : Menu
 {
     public override void Executar(Database db)
     {
-        ExibirNomeOpcao("Excluir um usuario");
+        ExibirNomeOpcao("Excluir um usuário");
 
-        Console.Write("Informe o ID do usuario que será deletado: ");
+        Console.Write("Informe o ID do usuário que será excluído: ");
         int id = int.Parse(Console.ReadLine()!);
 
         var usuario = db.Usuarios.FirstOrDefault(u => u.Id == id);
@@ -29,3 +29,4 @@ internal class MenuDeletarUsuario : Menu
 
     }
 }
+

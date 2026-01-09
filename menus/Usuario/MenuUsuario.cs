@@ -7,24 +7,24 @@ internal class MenuUsuario : Menu
     {
 
         Dictionary<int, Menu> opcoes = new();
-        opcoes.Add(1, new MenuCadstrarUsuario());
+        opcoes.Add(1, new MenuCadastrarUsuario());
         opcoes.Add(2, new MenuListarUsuarios());
         opcoes.Add(3, new MenuBuscarUsuarioId());
-        opcoes.Add(4, new MenuDeletarUsuario());
+        opcoes.Add(4, new MenuApagarUsuario());
         opcoes.Add(5, new MenuListarEmprestimosUsuario());
 
         void ExibirMenu()
         {
 
 
-            ExibirNomeOpcao("Menu de Usuarios");
+            ExibirNomeOpcao("Menu de Usuários");
 
             Console.WriteLine(@"
-1 - Cadastrar um novo usuario
-2 - Listar Usuarios
-3 - Buscar um usuario por ID
-4 - Apagar um usuario
-5 - Listar empréstimos de um usuario
+1 - Cadastrar um novo usuário
+2 - Listar Usuários
+3 - Buscar um usuário por ID
+4 - Apagar um usuário
+5 - Listar empréstimos de um usuário
 0 - Sair
 ");
 
@@ -57,3 +57,4 @@ internal class MenuUsuario : Menu
 
 
 }
+

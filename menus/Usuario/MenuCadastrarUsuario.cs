@@ -2,11 +2,11 @@ using Biblioteca.Modelos;
 
 namespace Biblioteca.Menus;
 
-internal class MenuCadstrarUsuario : Menu
+internal class MenuCadastrarUsuario : Menu
 {
     public override void Executar(Database db)
     {
-        ExibirNomeOpcao("Cadastrar Usuario");
+        ExibirNomeOpcao("Cadastrar Usuário");
 
         Console.Write("Informe o nome do usuário: ");
         string nome = Console.ReadLine()!;
@@ -23,3 +23,4 @@ internal class MenuCadstrarUsuario : Menu
         SairDoMenu();
     }
 }
+

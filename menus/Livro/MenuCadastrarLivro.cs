@@ -9,13 +9,13 @@ internal class MenuCadastrarLivro : Menu
     {
         ExibirNomeOpcao("Cadastrar Novo Livro");
 
-        Console.Write("Iforme o nome do livro: ");
+        Console.Write("Informe o nome do livro: ");
         string titulo = Console.ReadLine()!;
 
         Console.Write("\nInforme o nome do autor do livro: ");
-        string nome = Console.ReadLine()!;
+        string autor = Console.ReadLine()!;
 
-        Livro livro = new(titulo, nome);
+        Livro livro = new(titulo, autor);
         db.Livros.Add(livro);
 
         Thread.Sleep(1000);
